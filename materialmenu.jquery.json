@@ -14,7 +14,7 @@
   "dependencies": {
     "jquery": ">=1.9.1"
   },
-  "keywords": ["menu", "mobile menu", "responsive menu", "responsive", "UI", "navigation"],
+  "keywords": ["menu", "mobile", "responsive", "UI", "navigation"],
   "licenses": [
     {
       "type": "MIT",
