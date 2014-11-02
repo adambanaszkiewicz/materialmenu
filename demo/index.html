@@ -1,0 +1,280 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <!--[if lt IE 9]>
+    <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <title>Material Menu Demo</title>
+  <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+  <link rel="stylesheet" href="foundation.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+  <body>
+    <div id="header">
+      <div class="row">
+        <div class="four columns">
+          <a href="/" class="logo">materialmenu.jquery.js</a>
+        </div>
+        <div class="eight columns material-menu">
+          <nav class="top-bar">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li class="has-dropdown"><a href="#">About us</a>
+                <ul class="dropdown">
+                  <li><a href="#">Our history</a></li>
+                  <li><a href="#">Our company now</a></li>
+                </ul>
+              </li>
+              <li class="has-dropdown"><a href="#">Articles</a>
+                <ul class="dropdown">
+                  <li class="has-dropdown"><a href="#">Music</a>
+                    <ul class="dropdown">
+                      <li><a href="#">Dance music</a></li>
+                      <li><a href="#">Popular</a></li>
+                      <li><a href="#">Songs from films‎</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Cinema</a></li>
+                  <li class="has-dropdown"><a href="#">Food</a>
+                    <ul class="dropdown">
+                      <li><a href="#">Breakfast</a></li>
+                      <li><a href="#">Lunch</a></li>
+                      <li><a href="#">Dinner</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">Other</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="three mobile-four columns">
+        <nav class="top-bar vertical">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li class="has-dropdown"><a href="#">About us</a>
+              <ul class="dropdown">
+                <li><a href="#">Our history</a></li>
+                <li><a href="#">Our company now</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown"><a href="#">Articles</a>
+              <ul class="dropdown">
+                <li class="has-dropdown"><a href="#">Music</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Dance music</a></li>
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">Songs from films‎</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Cinema</a></li>
+                <li class="has-dropdown"><a href="#">Food</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Breakfast</a></li>
+                    <li><a href="#">Lunch</a></li>
+                    <li><a href="#">Dinner</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#">Other</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="nine mobile-four columns">
+        <h2>Material Menu Demo</h2>
+        <hr />
+        <h4>Simple - only menu</h4>
+<pre style='color:#000000;background:#ffffff;'>
+$<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>.material-menu nav > ul</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>materialmenu<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+        <hr />
+<h5>CSS - Menu Button</h5>
+<pre style='color:#000000;background:#ffffff;'>
+<span style='color:#800000; font-weight:bold; '>.material-menu</span>-<span style='color:#800000; font-weight:bold; '>button</span> <span style='color:#800080; '>{</span><span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#074726; '>block</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>width</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>50</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>height</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>45</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>padding</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>background-color</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>#</span><span style='color:#008000; '>000</span><span style='color:#800080; '>;</span><span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>.material-menu</span>-<span style='color:#800000; font-weight:bold; '>button</span> <span style='color:#800000; font-weight:bold; '>span</span> <span style='color:#800080; '>{</span><span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#074726; '>block</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>width</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>100</span><span style='color:#006600; '>%</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>height</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>5</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>margin-bottom</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>4</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>background-color</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>#</span><span style='color:#008000; '>fff</span><span style='color:#800080; '>;</span><span style='color:#800080; '>}</span>
+</pre>
+<h5>CSS - Menu in mobile-view</h5>
+<pre style='color:#000000;background:#ffffff;'>
+<span style='color:#800080; '>@</span><span style='color:#004a43; '>media</span> <span style='color:#004a43; '>only screen and (max-width: 767px) </span><span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>.material-menu-wrapper </span><span style='color:#800080; '>{</span><span style='color:#bb7977; font-weight:bold; '>padding</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>20</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><span style='color:#800080; '>}</span>
+  <span style='color:#800000; font-weight:bold; '>.material-menu-view-mobile</span> <span style='color:#800080; '>{</span><span style='color:#bb7977; font-weight:bold; '>background-color</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>#</span><span style='color:#008000; '>fff</span><span style='color:#800080; '>;</span><span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+</pre>
+<h5>CSS - Shadow under title-bar</h5>
+<pre style='color:#000000;background:#ffffff;'>
+<span style='color:#800000; font-weight:bold; '>.material-menu-titlebar </span><span style='color:#800080; '>{</span>
+  -webkit-box-shadow<span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>2</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>3</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> rgba(<span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span>)<span style='color:#800080; '>;</span>
+  -moz-box-shadow<span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>2</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>3</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> rgba(<span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span>)<span style='color:#800080; '>;</span>
+  box-shadow<span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>2</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>3</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> rgba(<span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span>)<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+<h5>CSS - Shadow on right-side of mobile-menu</h5>
+<pre style='color:#000000;background:#ffffff;'>
+<span style='color:#800000; font-weight:bold; '>.material-menu-view-mobile </span><span style='color:#800080; '>{</span>
+  -webkit-box-shadow<span style='color:#808030; '>:</span><span style='color:#008c00; '>40</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>30</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> rgba(<span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span>)<span style='color:#800080; '>;</span>
+  -moz-box-shadow<span style='color:#808030; '>:</span><span style='color:#008c00; '>40</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>30</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> rgba(<span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span>)<span style='color:#800080; '>;</span>
+  box-shadow<span style='color:#808030; '>:</span><span style='color:#008c00; '>40</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>30</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> rgba(<span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span>)<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+        <hr />
+        <h4>Simple - with title-bar (THIS EXAMLPE)</h4>
+<pre style='color:#000000;background:#ffffff;'>
+$<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>.material-menu nav > ul</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>materialmenu<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Page title, showed on mobile devices.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type string</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  title<span style='color:#800080; '>:</span> <span style='color:#0000e6; '>'My website title'</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Tells if title can be showed on mobile devices (only).</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type boolean</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  showTitle<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+        <hr />
+        <h4>Advanced - all events (default functionality)</h4>
+<pre style='color:#000000;background:#ffffff;'>
+$<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>.material-menu nav > ul</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>materialmenu<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+  onOpen<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+  onClose<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+  onChangeMobile<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    element<span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>addClass<span style='color:#808030; '>(</span><span style='color:#0000e6; '>'vertical'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+  onChangeDesktop<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    element<span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>removeClass<span style='color:#808030; '>(</span><span style='color:#0000e6; '>'vertical'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+  onShowTitlebar<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+  onHideTitlebar<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+        <hr />
+        <h4>Advanced - all options (default functionality)</h4>
+        <pre style='color:#000000;background:#ffffff;'>
+$<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>.material-menu nav > ul</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>materialmenu<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Define width of the window (in pixels) where starts mobile devices.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type integer</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  mobileWidth<span style='color:#800080; '>:</span> <span style='color:#008c00; '>768</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Width of the wrapper of menu. Works only on mbile.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type integer</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  width<span style='color:#800080; '>:</span> <span style='color:#008c00; '>250</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Time of animation.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type integer</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  animationTime<span style='color:#800080; '>:</span> <span style='color:#008c00; '>200</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Overlay opacity.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type integer</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  overlayOpacity<span style='color:#800080; '>:</span> <span style='color:#008000; '>0.4</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Class of menu button that fires showing of menu.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type string</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  buttonClass<span style='color:#800080; '>:</span> <span style='color:#0000e6; '>'material-menu-button'</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* If you want, you can define Your own menu button,</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* that be appended to generated title.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type string</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  buttonHTML<span style='color:#800080; '>:</span> <span style='color:#0000e6; '>'&lt;div class="material-menu-button">&lt;span>&lt;/span>&lt;span>&lt;/span>&lt;span>&lt;/span>&lt;/div>'</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Page title, showed on mobile devices.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type string</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  title<span style='color:#800080; '>:</span> <span style='color:#0000e6; '>''</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Tells if title can be showed on mobile devices (only).</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type boolean</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  showTitle<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>false</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Number of pixels to scroll top, when title is showed on mobile devices.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* If is 0, title will always be visible on top.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type integer</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  titleShowOn<span style='color:#800080; '>:</span> <span style='color:#008c00; '>40</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Fires when menu is opened.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @param  jQuery object element Menu (ul) object.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @return void</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  onOpen<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Fires when menu is closed.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @param  jQuery object element Menu (ul) object.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @return void</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  onClose<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Fires when window width is chenged from desktop to mobile.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @param  jQuery object element Menu (ul) object.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @return void</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  onChangeMobile<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    element<span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>addClass<span style='color:#808030; '>(</span><span style='color:#0000e6; '>'vertical'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Fires when window width is chenged from mobile to desktop.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @param  jQuery object element Menu (ul) object.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @return void</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  onChangeDesktop<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    element<span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>removeClass<span style='color:#808030; '>(</span><span style='color:#0000e6; '>'vertical'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Fires when title-bar is opened.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @param  jQuery object element Title-bar object.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @return void</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  onShowTitlebar<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+  <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Fires when title-bar is closed.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @param  jQuery object element Title-bar object.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @return void</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
+  onHideTitlebar<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+      </div>
+    </div>
+    <footer>
+      <p class="text-center">&copy; 2014 <a href="http://adambanaszkiewicz.pl/" target="_blank">Adam Banaszkiewicz</a>. All Rights Reserved.</p>
+    </footer>
+    <script type="text/javascript" src="../materialmenu.jquery.js"></script>
+    <script>
+      $('.material-menu nav > ul').materialmenu({
+        /**
+         * Page title, showed on mobile devices.
+         * @type string
+         */
+        title: 'My website title',
+        /**
+         * Tells if title can be showed on mobile devices (only).
+         * @type boolean
+         */
+        showTitle: true
+      });
+    </script>
+  </body>
+</html>
