@@ -483,27 +483,31 @@
        */
       this.bindTouchClose = function() {
         var self = this;
+        var elements = [ this.element, this.overlay ];
 
-        if(this.overlay[0] && this.overlay[0].addEventListener && !this.overlay.data('materialmenu-binded-touchclose'))
+        for(var i in elements)
         {
-          this.overlay.data('materialmenu-binded-touchclose', '1');
-          
-          this.overlay[0].addEventListener('touchstart', function(event) {
-            self.touchPosStart.x = event.touches[0].pageX;
-            self.touchPosStart.y = event.touches[0].pageY;
-          }, false);
-          
-          this.overlay[0].addEventListener('touchend', function(event) {
-            if(self.getTouchDirection() == 'left')
-            {
-
-            }
-          }, false);
-          
-          this.overlay[0].addEventListener('touchmove', function(event) {
-            self.touchPosEnd.x = event.touches[0].pageX;
-            self.touchPosEnd.y = event.touches[0].pageY;
-          }, false);
+          if(elements[i][0] && elements[i][0].addEventListener && !elements[i].data('materialmenu-binded-touchclose'))
+          {
+            elements[i].data('materialmenu-binded-touchclose', '1');
+            
+            elements[i][0].addEventListener('touchstart', function(event) {
+              self.touchPosStart.x = event.touches[0].pageX;
+              self.touchPosStart.y = event.touches[0].pageY;
+            }, false);
+            
+            elements[i][0].addEventListener('touchend', function(event) {
+              if(self.getTouchDirection() == 'left')
+              {
+                self.close();
+              }
+            }, false);
+            
+            elements[i][0].addEventListener('touchmove', function(event) {
+              self.touchPosEnd.x = event.touches[0].pageX;
+              self.touchPosEnd.y = event.touches[0].pageY;
+            }, false);
+          }
         }
       };
 
@@ -538,16 +542,16 @@
        * @return string Name of direction.
        */
       this.getTouchDirection = function() {
-        var differenceX = Math.abs(this.touchPosStart.pageX - this.touchPosEnd.pageX);
-        var differenceY = Math.abs(this.touchPosStart.pageY - this.touchPosEnd.pageY);
+        var differenceX = Math.abs(this.touchPosStart.x - this.touchPosEnd.x);
+        var differenceY = Math.abs(this.touchPosStart.y - this.touchPosEnd.y);
         
         if(differenceX > differenceY)
-          if(this.touchPosStart.pageX > this.touchPosEnd.pageX)
+          if(this.touchPosStart.x > this.touchPosEnd.x)
             return 'left';
           else
             return 'right';
         else
-          if(this.touchPosStart.pageY > this.touchPosEnd.pageY)
+          if(this.touchPosStart.y > this.touchPosEnd.y)
             return 'up';
           else
             return 'down';
