@@ -17,12 +17,23 @@
   <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
   <link rel="stylesheet" href="foundation.css" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    $(function() {
+      $('.accordion > .pane > .content').hide();
+      $('.accordion > .pane:first-child > .content').show();
+      $('.accordion > .pane > .title').click(function() {
+        $('.accordion > .pane > .content').slideUp(250);
+        $(this).parent().find('> .content').slideDown(250);
+      });
+    });
+  </script>
 </head>
   <body>
     <div id="header">
       <div class="row">
         <div class="four columns">
           <a href="/" class="logo">materialmenu.jquery.js</a>
+          <div class="material-menu-button"><span></span><span></span><span></span></div>
         </div>
         <div class="eight columns material-menu">
           <nav class="top-bar">
@@ -96,170 +107,146 @@
         </nav>
       </div>
       <div class="nine mobile-four columns">
-        <h2>Material Menu Demo</h2>
+        <div class="sections">
+          <a href="index.html" class="active">Implementing in steps</a>
+          <a href="doc.html">Simple doc</a>
+        </div>
         <hr />
-        <h4>Simple - only menu</h4>
+        <div class="accordion">
+          <div class="pane">
+            <div class="title">
+              STEP 1: Include JS
+            </div>
+            <div class="content">
+              <p>Include plugin file into Your website.</p>
+<pre style='color:#000000;background:#ffffff;'>
+<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text/javascript"</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"materialmenu.jquery.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span>
+</pre>
+            </div>
+          </div>
+          <div class="pane">
+            <div class="title">
+              STEP 2: Menu Button (HTML)
+            </div>
+            <div class="content">
+              <p>Place belowed menu button in Your HTML. Click this button to open menu on mobile device.</p>
+<pre style='color:#000000;background:#ffffff;'>
+<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"material-menu-button"</span><span style='color:#a65700; '>></span>
+    <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>span</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>span</span><span style='color:#a65700; '>></span>
+    <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>span</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>span</span><span style='color:#a65700; '>></span>
+    <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>span</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>span</span><span style='color:#a65700; '>></span>
+<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
+</pre>
+            </div>
+          </div>
+          <div class="pane">
+            <div class="title">
+              STEP 3: Styling elements
+            </div>
+            <div class="content">
+              <p>Create new or copy bolowed CSS, to style Your menu and menu-button.</p>
+<pre style='color:#000000;background:#ffffff;'>
+<span style='color:#696969; '>/** On desktop, we do not need to show menu button */</span>
+<span style='color:#808030; '>.</span>material-menu-button <span style='color:#800080; '>{</span>
+    <span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#074726; '>none</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+
+<span style='color:#696969; '>/** Menu in mobile-view */</span>
+<span style='color:#800080; '>@</span><span style='color:#004a43; '>media</span> <span style='color:#004a43; '>only screen and (max-width: 767px) </span><span style='color:#800080; '>{</span>
+    <span style='color:#696969; '>/** Button styling */</span>
+    <span style='color:#808030; '>.</span>material-menu-button <span style='color:#800080; '>{</span>
+        <span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#074726; '>block</span><span style='color:#800080; '>;</span>
+        <span style='color:#bb7977; font-weight:bold; '>width</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>50</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span>
+        <span style='color:#bb7977; font-weight:bold; '>height</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>45</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span>
+        <span style='color:#bb7977; font-weight:bold; '>padding</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span>
+        <span style='color:#bb7977; font-weight:bold; '>background-color</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>#</span><span style='color:#008000; '>000</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#808030; '>.</span>material-menu-button <span style='color:#800000; font-weight:bold; '>span</span> <span style='color:#800080; '>{</span>
+        <span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#074726; '>block</span><span style='color:#800080; '>;</span>
+        <span style='color:#bb7977; font-weight:bold; '>width</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>100</span><span style='color:#006600; '>%</span><span style='color:#800080; '>;</span>
+        <span style='color:#bb7977; font-weight:bold; '>height</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>5</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span>
+        <span style='color:#bb7977; font-weight:bold; '>margin-bottom</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>4</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span>
+        <span style='color:#bb7977; font-weight:bold; '>background-color</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>#</span><span style='color:#008000; '>fff</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+
+    <span style='color:#808030; '>.</span>material-menu-wrapper <span style='color:#800080; '>{</span>
+        <span style='color:#bb7977; font-weight:bold; '>padding</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>20</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#808030; '>.</span>material-menu-view-mobile <span style='color:#800080; '>{</span>
+        <span style='color:#bb7977; font-weight:bold; '>background-color</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>#</span><span style='color:#008000; '>fff</span><span style='color:#800080; '>;</span>
+        <span style='color:#008484; '>-webkit-box-shadow</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>40</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>30</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#400000; '>rgba</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#008484; '>-moz-box-shadow</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>40</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>30</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#400000; '>rgba</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#bb7977; font-weight:bold; '>box-shadow</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>40</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>30</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#400000; '>rgba</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+
+    <span style='color:#696969; '>/** Titlebar */</span>
+    <span style='color:#808030; '>.</span>material-menu-titlebar <span style='color:#800080; '>{</span>
+        <span style='color:#008484; '>-webkit-box-shadow</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>2</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>3</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#400000; '>rgba</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#008484; '>-moz-box-shadow</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>2</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>3</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#400000; '>rgba</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#bb7977; font-weight:bold; '>box-shadow</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>2</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>3</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#400000; '>rgba</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+</pre>
+            </div>
+          </div>
+          <div class="pane">
+            <div class="title">
+              STEP 4: Call plugin
+            </div>
+            <div class="content">
+              <p>Plugin must be called on UL element. It wraps UL into DIV with class <code>.material-menu-wrapper</code>. When is mobile view, plugin add to the NAV element (<code>$(this).parent().parent()</code>) class named <code>.vertical</code> for styling in vertical mode, but You can change what plugin does in mobile view, by providing Your own function for option <code>onChangeMobile: function() {}</code>.</p>
 <pre style='color:#000000;background:#ffffff;'>
 $<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>.material-menu nav > ul</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>materialmenu<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
 </pre>
-        <hr />
-<h5>CSS - Menu Button</h5>
-<pre style='color:#000000;background:#ffffff;'>
-<span style='color:#800000; font-weight:bold; '>.material-menu</span>-<span style='color:#800000; font-weight:bold; '>button</span> <span style='color:#800080; '>{</span><span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#074726; '>block</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>width</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>50</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>height</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>45</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>padding</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>background-color</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>#</span><span style='color:#008000; '>000</span><span style='color:#800080; '>;</span><span style='color:#800080; '>}</span>
-<span style='color:#800000; font-weight:bold; '>.material-menu</span>-<span style='color:#800000; font-weight:bold; '>button</span> <span style='color:#800000; font-weight:bold; '>span</span> <span style='color:#800080; '>{</span><span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#074726; '>block</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>width</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>100</span><span style='color:#006600; '>%</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>height</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>5</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>margin-bottom</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>4</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><span style='color:#bb7977; font-weight:bold; '>background-color</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>#</span><span style='color:#008000; '>fff</span><span style='color:#800080; '>;</span><span style='color:#800080; '>}</span>
+              <hr />
+              <h4>Explanation</h4>
+              <p>Belowed code:</p>
+              <pre style='color:#000000;background:#ffffff;'>
+<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"material-menu"</span><span style='color:#a65700; '>></span>
+    <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>nav</span><span style='color:#a65700; '>></span>
+        <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>ul</span><span style='color:#a65700; '>></span>
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"/"</span><span style='color:#a65700; '>></span>Home<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"/about.html"</span><span style='color:#a65700; '>></span>About us<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"/contact.html"</span><span style='color:#a65700; '>></span>Contact<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>
+        <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>ul</span><span style='color:#a65700; '>></span>
+    <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>nav</span><span style='color:#a65700; '>></span>
+<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
 </pre>
-<h5>CSS - Menu in mobile-view</h5>
-<pre style='color:#000000;background:#ffffff;'>
-<span style='color:#800080; '>@</span><span style='color:#004a43; '>media</span> <span style='color:#004a43; '>only screen and (max-width: 767px) </span><span style='color:#800080; '>{</span>
-  <span style='color:#800000; font-weight:bold; '>.material-menu-wrapper </span><span style='color:#800080; '>{</span><span style='color:#bb7977; font-weight:bold; '>padding</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>20</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><span style='color:#800080; '>}</span>
-  <span style='color:#800000; font-weight:bold; '>.material-menu-view-mobile</span> <span style='color:#800080; '>{</span><span style='color:#bb7977; font-weight:bold; '>background-color</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>#</span><span style='color:#008000; '>fff</span><span style='color:#800080; '>;</span><span style='color:#800080; '>}</span>
-<span style='color:#800080; '>}</span>
+            <p>Will be converted into this:</p>
+            <pre style='color:#000000;background:#ffffff;'>
+<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"material-menu"</span><span style='color:#a65700; '>></span>
+    <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>nav</span><span style='color:#a65700; '>></span>
+<span style="background-color:#ddd;">        <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"material-menu-wrapper material-menu-view-desktop"</span><span style='color:#274796; '> </span><span style='color:#074726; '>style</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"</span><span style='color:#274796; '>some</span><span style='color:#808030; '>:</span><span style='color:#274796; '>style</span><span style='color:#800080; '>;</span><span style='color:#0000e6; '>"</span><span style='color:#a65700; '>></span></span>
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>ul</span><span style='color:#a65700; '>></span>
+                <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"/"</span><span style='color:#a65700; '>></span>Home<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>
+                <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"/about.html"</span><span style='color:#a65700; '>></span>About us<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>
+                <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"/contact.html"</span><span style='color:#a65700; '>></span>Contact<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>
+            <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>ul</span><span style='color:#a65700; '>></span>
+<span style="background-color:#ddd;">        <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span></span>
+    <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>nav</span><span style='color:#a65700; '>></span>
+<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
 </pre>
-<h5>CSS - Shadow under title-bar</h5>
-<pre style='color:#000000;background:#ffffff;'>
-<span style='color:#800000; font-weight:bold; '>.material-menu-titlebar </span><span style='color:#800080; '>{</span>
-  -webkit-box-shadow<span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>2</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>3</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> rgba(<span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span>)<span style='color:#800080; '>;</span>
-  -moz-box-shadow<span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>2</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>3</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> rgba(<span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span>)<span style='color:#800080; '>;</span>
-  box-shadow<span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>2</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>3</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> rgba(<span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span>)<span style='color:#800080; '>;</span>
-<span style='color:#800080; '>}</span>
+            <p>And in mobile view, will looks like this:</p>
+            <pre style='color:#000000;background:#ffffff;'>
+<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"material-menu"</span><span style='color:#a65700; '>></span>
+    <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>nav</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"vertical"</span><span style='color:#a65700; '>></span>
+<span style="background-color:#ddd;">        <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"material-menu-wrapper material-menu-view-mobile"</span><span style='color:#274796; '> </span><span style='color:#074726; '>style</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"</span><span style='color:#274796; '>some</span><span style='color:#808030; '>:</span><span style='color:#274796; '>style</span><span style='color:#800080; '>;</span><span style='color:#0000e6; '>"</span><span style='color:#a65700; '>></span></span>
+            <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>ul</span><span style='color:#a65700; '>></span>
+                <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"/"</span><span style='color:#a65700; '>></span>Home<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>
+                <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"/about.html"</span><span style='color:#a65700; '>></span>About us<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>
+                <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"/contact.html"</span><span style='color:#a65700; '>></span>Contact<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>
+            <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>ul</span><span style='color:#a65700; '>></span>
+<span style="background-color:#ddd;">        <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span></span>
+    <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>nav</span><span style='color:#a65700; '>></span>
+<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
 </pre>
-<h5>CSS - Shadow on right-side of mobile-menu</h5>
-<pre style='color:#000000;background:#ffffff;'>
-<span style='color:#800000; font-weight:bold; '>.material-menu-view-mobile </span><span style='color:#800080; '>{</span>
-  -webkit-box-shadow<span style='color:#808030; '>:</span><span style='color:#008c00; '>40</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>30</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> rgba(<span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span>)<span style='color:#800080; '>;</span>
-  -moz-box-shadow<span style='color:#808030; '>:</span><span style='color:#008c00; '>40</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>30</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> rgba(<span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span>)<span style='color:#800080; '>;</span>
-  box-shadow<span style='color:#808030; '>:</span><span style='color:#008c00; '>40</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>30</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span><span style='color:#006600; '>px</span> rgba(<span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0.2</span>)<span style='color:#800080; '>;</span>
-<span style='color:#800080; '>}</span>
-</pre>
-        <hr />
-        <h4>Simple - with title-bar (THIS EXAMLPE)</h4>
-<pre style='color:#000000;background:#ffffff;'>
-$<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>.material-menu nav > ul</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>materialmenu<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Page title, showed on mobile devices.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type string</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  title<span style='color:#800080; '>:</span> <span style='color:#0000e6; '>'My website title'</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Tells if title can be showed on mobile devices (only).</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type boolean</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  showTitle<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span>
-<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-</pre>
-        <hr />
-        <h4>Advanced - all events (default functionality)</h4>
-<pre style='color:#000000;background:#ffffff;'>
-$<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>.material-menu nav > ul</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>materialmenu<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
-  onOpen<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
-  onClose<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
-  onChangeMobile<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
-    element<span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>addClass<span style='color:#808030; '>(</span><span style='color:#0000e6; '>'vertical'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-  <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
-  onChangeDesktop<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
-    element<span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>removeClass<span style='color:#808030; '>(</span><span style='color:#0000e6; '>'vertical'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-  <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
-  onShowTitlebar<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
-  onHideTitlebar<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span>
-<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-</pre>
-        <hr />
-        <h4>Advanced - all options (default functionality)</h4>
-        <pre style='color:#000000;background:#ffffff;'>
-$<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>.material-menu nav > ul</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>materialmenu<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Define width of the window (in pixels) where starts mobile devices.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type integer</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  mobileWidth<span style='color:#800080; '>:</span> <span style='color:#008c00; '>768</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Width of the wrapper of menu. Works only on mbile.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type integer</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  width<span style='color:#800080; '>:</span> <span style='color:#008c00; '>250</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Time of animation.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type integer</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  animationTime<span style='color:#800080; '>:</span> <span style='color:#008c00; '>200</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Overlay opacity.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type integer</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  overlayOpacity<span style='color:#800080; '>:</span> <span style='color:#008000; '>0.4</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Class of menu button that fires showing of menu.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type string</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  buttonClass<span style='color:#800080; '>:</span> <span style='color:#0000e6; '>'material-menu-button'</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* If you want, you can define Your own menu button,</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* that be appended to generated title.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type string</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  buttonHTML<span style='color:#800080; '>:</span> <span style='color:#0000e6; '>'&lt;div class="material-menu-button">&lt;span>&lt;/span>&lt;span>&lt;/span>&lt;span>&lt;/span>&lt;/div>'</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Page title, showed on mobile devices.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type string</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  title<span style='color:#800080; '>:</span> <span style='color:#0000e6; '>''</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Tells if title can be showed on mobile devices (only).</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type boolean</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  showTitle<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>false</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Number of pixels to scroll top, when title is showed on mobile devices.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* If is 0, title will always be visible on top.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @type integer</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  titleShowOn<span style='color:#800080; '>:</span> <span style='color:#008c00; '>40</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Fires when menu is opened.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @param  jQuery object element Menu (ul) object.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @return void</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  onOpen<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Fires when menu is closed.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @param  jQuery object element Menu (ul) object.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @return void</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  onClose<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Fires when window width is chenged from desktop to mobile.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @param  jQuery object element Menu (ul) object.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @return void</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  onChangeMobile<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
-    element<span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>addClass<span style='color:#808030; '>(</span><span style='color:#0000e6; '>'vertical'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-  <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Fires when window width is chenged from mobile to desktop.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @param  jQuery object element Menu (ul) object.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @return void</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  onChangeDesktop<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
-    element<span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>removeClass<span style='color:#808030; '>(</span><span style='color:#0000e6; '>'vertical'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-  <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Fires when title-bar is opened.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @param  jQuery object element Title-bar object.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @return void</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  onShowTitlebar<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
-  <span style='color:#696969; '>/**</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* Fires when title-bar is closed.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @param  jQuery object element Title-bar object.</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;* @return void</span>
-<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;*/</span>
-  onHideTitlebar<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span>
-<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-</pre>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <footer>
-      <p class="text-center">&copy; 2014 <a href="http://adambanaszkiewicz.pl/" target="_blank">Adam Banaszkiewicz</a>. All Rights Reserved.</p>
+      <p class="text-center">&copy; 2014 - 2015 <a href="http://adambanaszkiewicz.pl/" target="_blank">Adam Banaszkiewicz</a>. All Rights Reserved.</p>
     </footer>
     <script type="text/javascript" src="materialmenu.jquery.min.js"></script>
     <script>

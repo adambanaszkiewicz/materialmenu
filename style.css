@@ -5,8 +5,27 @@
 .material-menu-button span {display:block;width:100%;height:5px;margin-bottom:4px;background-color:#fff;}
 footer {padding:40px 0;}
 
+pre {margin:10px 0;padding:10px 0px 10px 10px;border-left:3px solid #2BA6CB}
+
+.sections {width:100%;}
+.sections:after {content:" ";display:table;clear:both;}
+.sections a {display:block;width:50%;float:left;font-size:15px;text-transform:uppercase;color:#888;text-align:center;padding:12px 0;border:1px solid #2BA6CB;}
+.sections a.active,
+.sections a:hover {background-color:#2BA6CB;color:#fff;}
+
+.accordion {position:relative;width:100%;overflow:hidden;}
+.accordion > .pane {display:block;position:relative;}
+.accordion > .pane > .title {margin:7px 0;font-size:13px;font-weight:bold;color:#fff;padding:10px;background-color:#2BA6CB}
+.accordion > .pane > .title:hover {cursor:pointer;}
+.accordion > .pane > .content {margin:15px;overflow:hidden;}
+
+.material-menu-button {display:none;}
+
 @media only screen and (max-width: 767px) {
+  .material-menu-button {position:absolute;top:20px;right:20px;z-index:10;display:block;width:50px;height:45px;padding:10px 10px 0px 10px;background-color:#000;}
+  .material-menu-button span {display:block;width:100%;height:5px;margin-bottom:4px;background-color:#fff;}
   .material-menu-wrapper {padding:20px;}
   .material-menu-view-mobile {background-color:#fff;-webkit-box-shadow:40px 0px 30px 0px rgba(0, 0, 0, 0.2);-moz-box-shadow:40px 0px 30px 0px rgba(0, 0, 0, 0.2);box-shadow:40px 0px 30px 0px rgba(0, 0, 0, 0.2);}
   .material-menu-titlebar {-webkit-box-shadow:0px 2px 3px 0px rgba(0, 0, 0, 0.2);-moz-box-shadow:0px 2px 3px 0px rgba(0, 0, 0, 0.2);box-shadow:0px 2px 3px 0px rgba(0, 0, 0, 0.2);}
+  .material-menu-titlebar .material-menu-button {position:static;}
 }
