@@ -21,8 +21,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  * 
- * @version 0.1.0
- * @date    2015.05.02
+ * @version 0.1.1
+ * @date    2015.08.09
  * @author  Adam Banaszkiewicz
  */
 (function($){
@@ -32,7 +32,7 @@
        * Define width of the window (in pixels) where starts mobile devices.
        * @type integer
        */
-      mobileWidth: 768,
+      mobileWidth: 767,
       /**
        * Width of the wrapper of menu. Works only on mbile.
        * @type integer
