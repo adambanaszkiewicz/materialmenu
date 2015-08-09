@@ -28,7 +28,7 @@ $(function(){
      * Define width of the window (in pixels) where starts mobile devices.
      * @type integer
      */
-    mobileWidth: 768,
+    mobileWidth: 767,
     /**
      * Width of the wrapper of menu. Works only on mbile.
      * @type integer
