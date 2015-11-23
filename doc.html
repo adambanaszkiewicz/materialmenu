@@ -200,7 +200,7 @@ $<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><sp
 <span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;* Define width of the window (in pixels) where starts mobile devices.</span>
 <span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;* @type integer</span>
 <span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;*/</span>
-    mobileWidth<span style='color:#800080; '>:</span> <span style='color:#008c00; '>767</span><span style='color:#808030; '>,</span>
+    mobileWidth<span style='color:#800080; '>:</span> <span style='color:#008c00; '>768</span><span style='color:#808030; '>,</span>
     <span style='color:#696969; '>/**</span>
 <span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;* Width of the wrapper of menu. Works only on mbile.</span>
 <span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;* @type integer</span>
@@ -243,6 +243,11 @@ $<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><sp
 <span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;* @type integer</span>
 <span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;*/</span>
     titleShowOn<span style='color:#800080; '>:</span> <span style='color:#008c00; '>40</span><span style='color:#808030; '>,</span>
+    <span style='color:#696969; '>/**</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;* If true, menu will hide when user click on some menu item.</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;* @type boolean</span>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;*/</span>
+    hideOnClick<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span><span style='color:#808030; '>,</span>
     <span style='color:#696969; '>/**</span>
 <span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;* Fires when menu is opened.</span>
 <span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;* @param  jQuery object element Menu (ul) object.</span>
@@ -290,7 +295,7 @@ $<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><sp
     <footer>
       <p class="text-center">&copy; 2014 - 2015 <a href="http://adambanaszkiewicz.pl/" target="_blank">Adam Banaszkiewicz</a>. All Rights Reserved.</p>
     </footer>
-    <script type="text/javascript" src="materialmenu.jquery.min.js"></script>
+    <script type="text/javascript" src="../materialmenu.jquery.js"></script>
     <script>
       $('.material-menu nav > ul').materialmenu({
         /**
