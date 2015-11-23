@@ -28,7 +28,7 @@ $(function(){
      * Define width of the window (in pixels) where starts mobile devices.
      * @type integer
      */
-    mobileWidth: 767,
+    mobileWidth: 768,
     /**
      * Width of the wrapper of menu. Works only on mbile.
      * @type integer
@@ -71,6 +71,11 @@ $(function(){
      * @type integer
      */
     titleShowOn: 40,
+    /**
+     * If true, menu will hide when user click on some menu item.
+     * @type boolean
+     */
+    hideOnClick: true,
     /**
      * Fires when menu is opened.
      * @param  jQuery object element Menu (ul) object.

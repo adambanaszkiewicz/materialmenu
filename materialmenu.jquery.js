@@ -21,8 +21,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  * 
- * @version 0.1.1
- * @date    2015.08.09
+ * @version 0.1.2
+ * @date    2015.11.23
  * @author  Adam Banaszkiewicz
  */
 (function($){
@@ -75,6 +75,11 @@
        * @type integer
        */
       titleShowOn: 40,
+      /**
+       * If true, menu will hide when user click on some menu item.
+       * @type boolean
+       */
+      hideOnClick: true,
       /**
        * Fires when menu is opened.
        * @param  jQuery object element Menu (ul) object.
@@ -308,6 +313,14 @@
         if($(window).scrollTop() >= self.options.titleShowOn)
         {
           self.showTitle();
+        }
+
+        // Hide on click in menu item
+        if(self.options.hideOnClick)
+        {
+          self.element.find('a').click(function() {
+            self.close();
+          });
         }
 
         // Close on touch slide in left
