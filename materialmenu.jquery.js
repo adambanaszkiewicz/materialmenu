@@ -22,8 +22,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  * 
- * @version 1.0.0
- * @date    2017.04.27
+ * @version 1.0.1
+ * @date    2018.04.18
  * @author  Matthew Sigley, Adam Banaszkiewicz
  */
 (function ($) {
@@ -124,6 +124,8 @@
 		}, options);
 
 		var MaterialMenu = function (element, options) {
+			var self = this;
+
 			/**
 			* Plugin options.
 			* @type object
@@ -173,6 +175,17 @@
 			* @type boolean
 			*/
 			this.changedOnDesktop = false;
+
+			/**
+			* Tells if passive event listeners are supported
+			* This improves performance on mobile.
+			* @type boolean
+			*/
+			this.touchPassiveSupported = false;
+			//Feature detection for passive event listeners
+			try {
+				window.addEventListener("test", null, Object.defineProperty({}, "passive", { get: function() { self.touchPassiveSupported = true; } }));
+			} catch(err) {}
 
 			/**
 			* Coordinates of start's touch.
@@ -542,12 +555,16 @@
 					if (elements[i][0] && elements[i][0].addEventListener && !elements[i].data('materialmenu-binded-touchclose')) {
 						elements[i].data('materialmenu-binded-touchclose', '1');
 
+						console.log(self.touchPassiveSupported);
 						elements[i][0].addEventListener('touchstart', function (event) {
 							self.touchPosStart.x = event.touches[0].pageX;
 							self.touchPosStart.y = event.touches[0].pageY;
-						}, false);
+							self.touchPosEnd.x = event.touches[0].pageX;
+							self.touchPosEnd.y = event.touches[0].pageY;
+						}, self.touchPassiveSupported ? { passive: false } : false);
 
 						elements[i][0].addEventListener('touchend', function (event) {
+							console.log(self.getTouchDirection());
 							if (self.getTouchDirection() == 'left') {
 								self.close();
 							}
@@ -556,7 +573,7 @@
 						elements[i][0].addEventListener('touchmove', function (event) {
 							self.touchPosEnd.x = event.touches[0].pageX;
 							self.touchPosEnd.y = event.touches[0].pageY;
-						}, false);
+						}, self.touchPassiveSupported ? { passive: false } : false);
 					}
 				}
 			};
@@ -594,7 +611,8 @@
 			this.getTouchDirection = function () {
 				var differenceX = Math.abs(this.touchPosStart.x - this.touchPosEnd.x);
 				var differenceY = Math.abs(this.touchPosStart.y - this.touchPosEnd.y);
-				if (differenceY > -100) {
+
+				if (differenceY < 100 && differenceX < 100) {
 					return 'none';
 				}
 				if (differenceX > differenceY)
